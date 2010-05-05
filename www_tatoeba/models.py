@@ -9,39 +9,6 @@
 
 from django.db import models
 
-class Acos(models.Model):
-    id = models.IntegerField(primary_key=True)
-    parent_id = models.IntegerField(null=True, blank=True)
-    model = models.CharField(max_length=765, blank=True)
-    foreign_key = models.IntegerField(null=True, blank=True)
-    alias = models.CharField(max_length=765, blank=True)
-    lft = models.IntegerField(null=True, blank=True)
-    rght = models.IntegerField(null=True, blank=True)
-    class Meta:
-        db_table = u'acos'
-
-class Aros(models.Model):
-    id = models.IntegerField(primary_key=True)
-    parent_id = models.IntegerField(null=True, blank=True)
-    model = models.CharField(max_length=765, blank=True)
-    foreign_key = models.IntegerField(null=True, blank=True)
-    alias = models.CharField(max_length=765, blank=True)
-    lft = models.IntegerField(null=True, blank=True)
-    rght = models.IntegerField(null=True, blank=True)
-    class Meta:
-        db_table = u'aros'
-
-class ArosAcos(models.Model):
-    id = models.IntegerField(primary_key=True)
-    aro_id = models.IntegerField(unique=True)
-    aco_id = models.IntegerField(unique=True)
-    _create = models.CharField(max_length=6)
-    _read = models.CharField(max_length=6)
-    _update = models.CharField(max_length=6)
-    _delete = models.CharField(max_length=6)
-    class Meta:
-        db_table = u'aros_acos'
-
 class AuthGroup(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(unique=True, max_length=240)
@@ -73,17 +40,28 @@ class AuthPermission(models.Model):
 class AuthUser(models.Model):
     id = models.IntegerField(primary_key=True)
     username = models.CharField(unique=True, max_length=90)
-    first_name = models.CharField(max_length=90)
-    last_name = models.CharField(max_length=90)
-    email = models.CharField(max_length=225)
-    password = models.CharField(max_length=384)
+    email = models.CharField(unique=True, max_length=225)
     is_staff = models.IntegerField()
     is_active = models.IntegerField()
     is_superuser = models.IntegerField()
     last_login = models.DateTimeField()
     date_joined = models.DateTimeField()
+    password = models.CharField(max_length=150)
+    lang = models.CharField(max_length=12, blank=True)
+    since = models.DateTimeField()
+    last_time_active = models.IntegerField()
+    level = models.IntegerField()
+    send_notifications = models.IntegerField()
+    name = models.CharField(max_length=765)
+    birthday = models.DateTimeField()
+    description = models.TextField()
+    homepage = models.CharField(max_length=765)
+    image = models.CharField(max_length=765)
+    country_id = models.CharField(max_length=6)
+    is_public = models.IntegerField()
+
     class Meta:
-        db_table = u'auth_user'
+        db_table = u'users'
 
 class AuthUserGroups(models.Model):
     id = models.IntegerField(primary_key=True)
