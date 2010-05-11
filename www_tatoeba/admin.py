@@ -1,4 +1,4 @@
-from www_tatoeba.models import Wall, SentencesLists
+from www_tatoeba.models import Wall, Sentences, SentencesLists
 from django.contrib import admin
 
 admin.site.register(Sentences)
