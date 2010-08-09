@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'tatoeba_6',                      # Or path to database file if using sqlite3.
+        'NAME': 'tatoeba_4',                      # Or path to database file if using sqlite3.
         'USER': 'tatoeba_admin',                      # Not used with sqlite3.
         'PASSWORD': 'pouet',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -72,6 +72,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'www_tatoeba.urls'
 
 TEMPLATE_DIRS = (
+	'/Users/biptaste/Documents/tatoeba/www_tatoeba/templates'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
