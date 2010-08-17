@@ -1,5 +1,25 @@
+{% load i18n %}
+
+{{ language_used }}
 {% if sentence_id %}
-	<p>Hello, world. Vous regarder la phrase {{ sentence_id }}.</p>
+	<p>{% blocktrans %}Hello, world. You watch the sentence {{ sentence_id }}.{% endblocktrans %}</p>
 {% else %}
 	<p>Error</p>
 {% endif %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+
+{{ LANGUAGE_CODE }} <br />
+{{ LANGUAGES }} <br />
+{{ LANGUAGE_BIDI }}
+
+<form action="/fre/sentences/show/12" method="get">
+<select name="language">
+{% for lang in LANGUAGES %}
+<option value="{{ lang.0 }}">{{ lang.1 }}</option>
+{% endfor %}
+</select>
+<input type="submit" value="Go" />
+</form>
