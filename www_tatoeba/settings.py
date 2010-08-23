@@ -29,12 +29,14 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
-# test internationalization
+# Supported language for this application
+_ = lambda s: s
 LANGUAGES = (
-    ('eng', 'English'),
-    ('fre', 'French'),
+	('de', _('German')),
+    ('en', _('English')),
+    ('fr', _('French')),
 )
 
 SITE_ID = 1
@@ -70,7 +72,8 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware', # Internationalization
+    #'django.middleware.locale.LocaleMiddleware', # added for internationalization
+    'I18nURLMiddleware.I18nURLMiddleware', # added
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -79,10 +82,10 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'www_tatoeba.urls'
 
 TEMPLATE_DIRS = (
-	'/Users/biptaste/Documents/tatoeba/www_tatoeba/templates'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    '/Users/biptaste/Documents/tatoeba/www_tatoeba/templates',	# added
 )
 
 INSTALLED_APPS = (
@@ -90,7 +93,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.admin',
+    'django.contrib.admin',		# added
     'django.contrib.messages',
-    'www_tatoeba'
+    'www_tatoeba',				# added
 )

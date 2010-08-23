@@ -6,7 +6,7 @@ def show(request, lang, sentence_id):
 	#lang = request.GET.get('language', 'fre')
 	
 	#request.session['django_language'] = lang
-	translation.activate(lang) # It work but I think it's better to use LocaleMiddleware
+	#translation.activate(lang) # It work but I think it's better to use LocaleMiddleware
 	
 	t = loader.get_template('skeleton.html')
 	c = Context({
