@@ -5,7 +5,7 @@ def index(request):
 	t = loader.get_template("skeleton.html")
 	c = Context({
 		'title': 'Tatoeba: Collecting example sentences',
-		'page': 'index.html'
+		'page': 'pages/index.html'
 	})
 	return HttpResponse(t.render(c))
 

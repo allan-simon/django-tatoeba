@@ -6,7 +6,7 @@ def show(request, lang, sentence_id):
 	t = loader.get_template('skeleton.html')
 	c = Context({
 		'title': 'my super title',
-		'page': 'sentences.html',
+		'page': 'pages/sentences.html',
 		'sentence_id': sentence_id,
 		'language_used': request.session['django_language']
     })
