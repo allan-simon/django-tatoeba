@@ -5,14 +5,11 @@ from django.utils import translation
 def show(request, lang, sentence_id):
 	t = loader.get_template('skeleton.html')
 	c = Context({
+		'title': 'my super title',
+		'page': 'sentences.html',
 		'sentence_id': sentence_id,
 		'language_used': request.session['django_language']
     })
 	return HttpResponse(t.render(c))
 	#return HttpResponse("Hello, world. Vous regarder la phrase %s." % sentence_id)
 
-def index(request):
-	t = loader.get_template('skeleton.html')
-	c = Context({
-    })
-	return HttpResponse(t.render(c))
