@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.template import Context, loader
 
-def index(request):
+def index(request, language):
 	t = loader.get_template("pages/index.html")
 	c = Context({
 	})

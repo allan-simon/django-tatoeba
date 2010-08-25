@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Django settings for www_tatoeba project.
 
 DEBUG = True
@@ -32,11 +33,11 @@ TIME_ZONE = 'America/Chicago'
 LANGUAGE_CODE = 'en'
 
 # Supported language for this application
-_ = lambda s: s
+#_ = lambda s: s
 LANGUAGES = (
-	('de', _('German')),
-    ('en', _('English')),
-    ('fr', _('French')),
+	('de', u'Deutsch'),
+    ('en', u'English'),
+    ('fr', u'Français'),
 )
 
 SITE_ID = 1
@@ -72,8 +73,8 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'middleware.I18nURLMiddleware.I18nURLMiddleware', # added
     'django.middleware.locale.LocaleMiddleware', # added for internationalization
+    'middleware.I18nUrlsMiddleware.I18nUrlsMiddleware', # added
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',

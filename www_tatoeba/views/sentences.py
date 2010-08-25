@@ -2,11 +2,9 @@ from django.template import Context, loader
 from django.http import HttpResponse
 from django.utils import translation
 
-def show(request, lang, sentence_id):
-	t = loader.get_template('skeleton.html')
+def show(request, language, sentence_id):
+	t = loader.get_template('pages/sentences.html')
 	c = Context({
-		'title': 'my super title',
-		'page': 'pages/sentences.html',
 		'sentence_id': sentence_id,
 		'language_used': request.session['django_language']
     })

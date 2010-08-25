@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-23 15:59+0200\n"
+"POT-Creation-Date: 2010-08-25 15:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
-#: settings.py:37
-msgid "German"
-msgstr ""
-
-#: settings.py:38
-msgid "English"
-msgstr ""
-
-#: settings.py:39
-msgid "French"
-msgstr ""
-
-#: templates/sentences.html:17
+#: templates/pages/sentences.html:21
 #, python-format
 msgid "Hello, world. You are looking at the sentence %(sentence_id)s."
-msgstr "Bonjour, tout le monde. Tu regardes la phrase %(sentence_id)s."
+msgstr ""

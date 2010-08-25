@@ -3,6 +3,10 @@
 {% get_available_languages as LANGUAGES %}
 {% get_current_language_bidi as LANGUAGE_BIDI %}
 
+
+{% block title %}plop{% endblock %}
+
+{% block content %}
 <select name="" onchange="$(location).attr(&#039;href&#039;, &#039;/&#039; + this.value+ &#039;/&#039; + &#039;sentences/show/{{sentence_id}}/&#039;);" id="languageSelection">
 {% for lang in LANGUAGES %}
 	<option value="{{ lang.0 }}" {% if lang.0 == language_used %} selected="selected"{% endif %}>{{ lang.1 }}</option>
@@ -24,13 +28,5 @@
 {{ LANGUAGE_CODE }} <br />
 {{ LANGUAGES }} <br />
 {{ LANGUAGE_BIDI }} <br />
-<!--
-<form action="/fre/sentences/show/12" method="get">
-<select name="language">
-{% for lang in LANGUAGES %}
-<option value="{{ lang.0 }}">{{ lang.1 }}</option>
-{% endfor %}
-</select>
-<input type="submit" value="Go" />
-</form>
--->
+
+{% endblock %}
