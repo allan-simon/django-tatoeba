@@ -1,0 +1,19 @@
+<div id="top_menu_container">
+	<div id="top_menu">
+		<div id="languageSelectionContainer">
+			<select id="languageSelection">
+				<option value="eng">English</option>
+			</select>
+		</div>
+		<div id="user_menu">
+			{% include "layouts/login.html" %}
+		</div>
+		<ul id="navigation_menu">
+			<li><a href="/eng/home" class="menuItem show">Home</a></li>
+			<li><a href="/eng/sentences/show/random" class="menuItem">Browse</a></li>
+			<li><a href="/eng/contribute" class="menuItem">Contribute</a></li>
+			<li><a href="/eng/users/all" class="menuItem">Members</a></li>
+			<li><a href="/eng/wall/index" class="menuItem">Wall</a></li>
+		</ul>
+	</div>
+</div>
