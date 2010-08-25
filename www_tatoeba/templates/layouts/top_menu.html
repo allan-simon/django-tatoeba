@@ -2,7 +2,9 @@
 	<div id="top_menu">
 		<div id="languageSelectionContainer">
 			<select id="languageSelection">
-				<option value="eng">English</option>
+			{% for lang in LANGUAGES %}
+				<option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %} selected="selected"{% endif %}>{{ lang.1 }}</option>
+			{% endfor %}
 			</select>
 		</div>
 		<div id="user_menu">
