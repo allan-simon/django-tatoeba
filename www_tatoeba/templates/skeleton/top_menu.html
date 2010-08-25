@@ -5,6 +5,12 @@
 				<option value="eng">English</option>
 			</select>
 		</div>
+		<div id="user_menu">
+		{% if user.is_authenticated  %}
+		{% else %}
+			{% include "skeleton/login.html" %}
+		{% endif %}
+		</div>
 		<ul id="navigation_menu">
 			<li><a href="/fre/home" class="menuItem show">Home</a>
 			<li><a href="/fre/sentences/show/random" class="menuItem">Browse</a>
