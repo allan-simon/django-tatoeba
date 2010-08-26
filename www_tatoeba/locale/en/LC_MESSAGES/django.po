@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-25 15:54+0200\n"
+"POT-Creation-Date: 2010-08-26 23:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,67 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/pages/sentences.html:21
+#: templates/layouts/login.html:13
+msgid "Register"
+msgstr ""
+
+#: templates/layouts/login.html:14
+msgid "Log in"
+msgstr ""
+
+#: templates/layouts/login.html:22
+msgid "Username : "
+msgstr ""
+
+#: templates/layouts/login.html:26
+msgid "Password : "
+msgstr ""
+
+#: templates/layouts/login.html:30
+msgid "Remember me"
+msgstr ""
+
+#: templates/layouts/login.html:36
+msgid "Password forgotten?"
+msgstr ""
+
+#: templates/layouts/login.html:37
+msgid "Close"
+msgstr ""
+
+#: templates/layouts/top_menu.html:13 templates/layouts/top_menu.html.py:14
+msgid "Profile"
+msgstr ""
+
+#: templates/layouts/top_menu.html:16 templates/layouts/top_menu.html.py:17
+msgid "Inbox"
+msgstr ""
+
+#: templates/layouts/top_menu.html:20
+msgid "Log out"
+msgstr ""
+
+#: templates/layouts/top_menu.html:27
+msgid "Home"
+msgstr ""
+
+#: templates/layouts/top_menu.html:28
+msgid "Browse"
+msgstr ""
+
+#: templates/layouts/top_menu.html:29
+msgid "Contribute"
+msgstr ""
+
+#: templates/layouts/top_menu.html:30
+msgid "Members"
+msgstr ""
+
+#: templates/layouts/top_menu.html:31
+msgid "Wall"
+msgstr ""
+
+#: templates/pages/sentences.html:11
 #, python-format
 msgid "Hello, world. You are looking at the sentence %(sentence_id)s."
 msgstr ""

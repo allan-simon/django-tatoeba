@@ -1,3 +1,4 @@
+{% load i18n %}
 <div id="top_menu_container">
 	<div id="top_menu">
 		<div id="languageSelectionContainer">
@@ -9,25 +10,25 @@
 		</div>
 		<div id="user_menu">
 		{% if user.is_authenticated  %}
-			<span id="profile" title="Profile">
-				<a href="/eng/user/index"><img src="http://flags.tatoeba.org/img/profile.png" alt="Profile" width="14" height="14" />{{ user.username  }}</a>
+			<span id="profile" title="{% trans "Profile" %}">
+				<a href="/{{ LANGUAGE_CODE }}/user/index"><img src="http://flags.tatoeba.org/img/profile.png" alt="{% trans "Profile" %}" width="14" height="14" />{{ user.username  }}</a>
 			</span>
-			<span id="inbox"  title="Inbox">
-				<a href="/eng/private_messages/folder/Inbox"><img src="http://flags.tatoeba.org/img/no_mail.png" alt="Inbox" width="16" height="16" /> 0</a>
+			<span id="inbox" title="{% trans "Inbox" %}">
+				<a href="/{{ LANGUAGE_CODE }}/private_messages/folder/Inbox"><img src="http://flags.tatoeba.org/img/no_mail.png" alt="{% trans "Inbox" %}" width="16" height="16" /> 0</a>
 			</span>
 			<span id="log_out">
-				<a href="/eng/users/logout"><img src="http://flags.tatoeba.org/img/log_out.png" alt="Log out" title="Log out" width="14" height="14" /></a>
+				<a href="/{{ LANGUAGE_CODE }}/users/logout"><img src="http://flags.tatoeba.org/img/log_out.png" alt="{% trans "Log out" %}" title="{% trans "Log out" %}" width="14" height="14" /></a>
 			</span>
 		{% else %}
 			{% include "layouts/login.html" %}
 		{% endif %}
 		</div>
 		<ul id="navigation_menu">
-			<li><a href="/eng/home" class="menuItem show">Home</a></li>
-			<li><a href="/eng/sentences/show/random" class="menuItem">Browse</a></li>
-			<li><a href="/eng/contribute" class="menuItem">Contribute</a></li>
-			<li><a href="/eng/users/all" class="menuItem">Members</a></li>
-			<li><a href="/eng/wall/index" class="menuItem">Wall</a></li>
+			<li><a href="/{{ LANGUAGE_CODE }}/home" class="menuItem show">{% trans "Home" %}</a></li>
+			<li><a href="/{{ LANGUAGE_CODE }}/sentences/show/random" class="menuItem">{% trans "Browse" %}</a></li>
+			<li><a href="/{{ LANGUAGE_CODE }}/contribute" class="menuItem">{% trans "Contribute" %}</a></li>
+			<li><a href="/{{ LANGUAGE_CODE }}/users/all" class="menuItem">{% trans "Members" %}</a></li>
+			<li><a href="/{{ LANGUAGE_CODE }}/wall/index" class="menuItem">{% trans "Wall" %}</a></li>
 		</ul>
 	</div>
 </div>
