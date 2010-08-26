@@ -5,7 +5,7 @@ def show(request, language, sentence_id):
 	t = loader.get_template('pages/sentences.html')
 	c = RequestContext(request, {
 		'sentence_id': sentence_id,
-		'language_used': request.session['django_language']
+		'language_used': language
     })
 	return HttpResponse(t.render(c))
 

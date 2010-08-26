@@ -16,7 +16,8 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     
     # Tatoeba url
-	(r'^$', 'views.index.index'),
 	(r'^(?P<language>\w+)/?$', 'views.index.index'),
+	(r'^(?P<language>\w+)/users/check_login/?$', 'views.user.check_login'),
+	(r'^(?P<language>\w+)/users/logout/?$', 'views.user.logout'),
     (r'^(?P<language>\w+)/sentences/show/(?P<sentence_id>\d+)/?$', 'views.sentences.show'),
 )

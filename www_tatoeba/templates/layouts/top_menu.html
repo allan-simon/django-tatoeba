@@ -8,7 +8,19 @@
 			</select>
 		</div>
 		<div id="user_menu">
+		{% if user.is_authenticated  %}
+			<span id="profile" title="Profile">
+				<a href="/eng/user/index"><img src="http://flags.tatoeba.org/img/profile.png" alt="Profile" width="14" height="14" />{{ user.username  }}</a>
+			</span>
+			<span id="inbox"  title="Inbox">
+				<a href="/eng/private_messages/folder/Inbox"><img src="http://flags.tatoeba.org/img/no_mail.png" alt="Inbox" width="16" height="16" /> 0</a>
+			</span>
+			<span id="log_out">
+				<a href="/eng/users/logout"><img src="http://flags.tatoeba.org/img/log_out.png" alt="Log out" title="Log out" width="14" height="14" /></a>
+			</span>
+		{% else %}
 			{% include "layouts/login.html" %}
+		{% endif %}
 		</div>
 		<ul id="navigation_menu">
 			<li><a href="/eng/home" class="menuItem show">Home</a></li>

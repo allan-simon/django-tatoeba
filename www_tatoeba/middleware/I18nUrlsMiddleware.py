@@ -1,17 +1,34 @@
 from django.conf import settings
 from django.utils import translation
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponsePermanentRedirect
 
 class I18nUrlsMiddleware:
-	def process_view(self, request, view_func, view_args, view_kwargs):
-		language = view_kwargs.get('language', None)
-		supported = dict(settings.LANGUAGES)
-		if language:
+	def process_request(self, request):
+		import re
+		check = re.match(r'/(?P<lang>\w+)/(?P<rest>.*)', request.path)
+		if check is not None:
+			language = check.group('lang')
+			supported = dict(settings.LANGUAGES)
+			
 			if supported.has_key(language):
 				translation.activate(language)
-			#elif old pages
+			elif language == 'admin':
+				pass
+			elif self.getOldLanguageCode().has_key(language):
+				url = request.path.replace(language, self.getOldLanguageCode()[language], 1)
+				return HttpResponsePermanentRedirect(url)
 			else:
-				url = request.path.replace(language, translation.get_language(), 1)
+				url = '/'+translation.get_language()+'/'+language+'/'+check.group('rest')
 				return HttpResponseRedirect(url)
 		else:
 			return HttpResponseRedirect('/'+translation.get_language())
+
+
+
+	def getOldLanguageCode(self):
+		lang = {
+			'deu': 'de',
+			'eng': 'en',
+			'fre': 'fr'
+		}
+		return lang 
