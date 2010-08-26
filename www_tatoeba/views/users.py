@@ -3,7 +3,7 @@ from django.template import RequestContext, loader
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout as dlogout
 
-def check_login(request, language):
+def check_login(request):
 	username = request.POST['username']
 	password = request.POST['password']
 	user = authenticate(username=username, password=password)
@@ -19,6 +19,6 @@ def check_login(request, language):
 	c = RequestContext(request, {})
 	return HttpResponse(msg)
 
-def logout(request, language):
+def logout(request):
 	dlogout(request)
 	return HttpResponse('Adieux')
