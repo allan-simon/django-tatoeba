@@ -3,10 +3,16 @@
 <head>
 	<meta charset="utf-8" />
 	<title>{% block title %}{% endblock %}</title>
-	<link rel="stylesheet" type="text/css" href="http://css.tatoeba.org/css/layouts/default.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/layouts/default.css" />
 </head>
 <body>
 	{% include "layouts/top_menu.html" %}
-	{% block content %}{% endblock %}
+	<div id="container1">
+		<div="container">
+			{% block content %}{% endblock %}
+		</div>
+	<div>
+	<div id="footer_container">
+	<div>
 </body>
 </html>
