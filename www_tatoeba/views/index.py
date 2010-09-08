@@ -6,3 +6,8 @@ def index(request):
 	c = RequestContext(request, {})
 	return HttpResponse(t.render(c))
 
+def home(request):
+	t = loader.get_template('pages/home.html')
+	c = RequestContext(request, {})
+	return HttpResponse(t.render(c))
+
