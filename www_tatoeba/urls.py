@@ -20,5 +20,6 @@ urlpatterns = patterns('',
 	(r'^\w+/home/?$', 'views.index.home'),
 	(r'^\w+/users/check_login/?$', 'views.users.check_login'),
 	(r'^\w+/users/logout/?$', 'views.users.logout'),
+	(r'^\w+/sentences/show/random/?$', 'views.sentences.random'),
     (r'^\w+/sentences/show/(?P<sentence_id>\d+)/?$', 'views.sentences.show'),
 )
