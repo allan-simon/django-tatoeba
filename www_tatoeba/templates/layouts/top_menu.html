@@ -2,7 +2,7 @@
 <div id="top_menu_container">
 	<div id="top_menu">
 		<div id="languageSelectionContainer">
-			<select id="languageSelection">
+			<select id="languageSelection" name="data[languageSelection]" onchange="$(location).attr('href', '/' + this.value);">
 			{% for lang in LANGUAGES %}
 				<option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %} selected="selected"{% endif %}>{{ lang.1 }}</option>
 			{% endfor %}
