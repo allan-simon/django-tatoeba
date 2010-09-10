@@ -13,9 +13,9 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'tatoeba_4',                      # Or path to database file if using sqlite3.
-        'USER': 'tatoeba_admin',                      # Not used with sqlite3.
-        'PASSWORD': 'pouet',                  # Not used with sqlite3.
+        'NAME': 'pytatoeba',                      # Or path to database file if using sqlite3.
+        'USER': 'tatoebadmin',                      # Not used with sqlite3.
+        'PASSWORD': 'obito',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
