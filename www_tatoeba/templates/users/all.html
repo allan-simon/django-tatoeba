@@ -1,0 +1,28 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}plop{% endblock %}
+
+{% block content %}
+<div id="main_content">
+	<table class="users">
+		<tbody>
+			<tr>
+				<th></th>
+				<th>Username</th>
+				<th>Member since</th>
+				<th>Last login</th>
+				<th>Member status</th>
+			</tr>
+			{% for u in allUsers %}
+			<tr>
+				<td></td>
+				<td>{{ u.username }}</td>
+				<td>{{ u.date_joined }}</td>
+				<td>{{ u.last_login }}</td>
+				<td></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}

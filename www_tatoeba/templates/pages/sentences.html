@@ -5,14 +5,11 @@
 {% block title %}plop{% endblock %}
 
 {% block content %}
-
-<p>{{ language_used }}</p>
+<div id="content">
 {% if sentence_id %}
-	<p>{% blocktrans %}Hello, world. You are looking at the sentence {{ sentence_id }}.{% endblocktrans %}</p>
+	{% blocktrans %}Hello, world. You are looking at the sentence {{ sentence_id }}.{% endblocktrans %}
 {% else %}
-	<p>Error</p>
+	Error
 {% endif %}
-
-
-
+</div>
 {% endblock %}

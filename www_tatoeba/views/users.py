@@ -25,4 +25,10 @@ def logout(request):
 	return HttpResponse('Adieux')
 
 def all(request):
-	return HttResponse('Members')
+	from www_tatoeba.models import AuthUser
+	allUsers = AuthUser.objects.all()
+	t = loader.get_template('users/all.html')
+	c = RequestContext(request, {
+		'allUsers': allUsers
+	})
+	return HttpResponse(t.render(c))
