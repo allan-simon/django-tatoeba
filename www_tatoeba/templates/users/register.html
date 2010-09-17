@@ -9,15 +9,15 @@
 <form id="UserRegisterForm" action="/{{ LANGUAGE_CODE }}/users/register" method="post"> {% csrf_token %}
 	<table id="userInformation">
 		<tr>
-			<td class="field"><label for="id_username">Username:</label></td>
+			<td class="field"><label for="id_username">Username :</label></td>
 			<td>{{ form.username }}</td>
 		</tr>
 		<tr>
-			<td class="field"><label for="id_password">Password:</label></td>
+			<td class="field"><label for="id_password">Password :</label></td>
 			<td>{{ form.password }}</td>
 		</tr>
 		<tr>
-			<td class="field"><label for="id_email">Email:</label></td>
+			<td class="field"><label for="id_email">Email :</label></td>
 			<td>{{ form.email }}</td>
 		</tr>
 	</table>

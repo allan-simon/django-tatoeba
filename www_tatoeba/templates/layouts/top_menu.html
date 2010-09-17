@@ -11,13 +11,13 @@
 		<div id="user_menu">
 		{% if user.is_authenticated  %}
 			<span id="profile" title="{% trans "Profile" %}">
-				<a href="/{{ LANGUAGE_CODE }}/user/index"><img src="http://flags.tatoeba.org/img/profile.png" alt="{% trans "Profile" %}" width="14" height="14" />{{ user.username  }}</a>
+				<a href="/{{ LANGUAGE_CODE }}/user/index"><img src="/static/img/profile.png" alt="{% trans "Profile" %}" width="14" height="14" />{{ user.username  }}</a>
 			</span>
 			<span id="inbox" title="{% trans "Inbox" %}">
-				<a href="/{{ LANGUAGE_CODE }}/private_messages/folder/Inbox"><img src="http://flags.tatoeba.org/img/no_mail.png" alt="{% trans "Inbox" %}" width="16" height="16" /> 0</a>
+				<a href="/{{ LANGUAGE_CODE }}/private_messages/folder/Inbox"><img src="/static/img/no_mail.png" alt="{% trans "Inbox" %}" width="16" height="16" /> 0</a>
 			</span>
 			<span id="log_out">
-				<a href="/{{ LANGUAGE_CODE }}/users/logout"><img src="http://flags.tatoeba.org/img/log_out.png" alt="{% trans "Log out" %}" title="{% trans "Log out" %}" width="14" height="14" /></a>
+				<a href="/{{ LANGUAGE_CODE }}/users/logout"><img src="/static/img/log_out.png" alt="{% trans "Log out" %}" title="{% trans "Log out" %}" width="14" height="14" /></a>
 			</span>
 		{% else %}
 			{% include "layouts/login.html" %}

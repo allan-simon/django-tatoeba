@@ -1,9 +1,25 @@
 {% extends "layouts/base.html" %}
 
 {% block title %}plop{% endblock %}
+{% block header %}
+<link rel="stylesheet" type="text/css" href="/static/css/users/login.css">
+{% endblock %}
 {% block content %}
-<from id="UserLoginForm" method="post" action="/{{ LANGUAGE_CODE }}/users/check_login">
+<form id="UserLoginForm" method="post" action="/{{ LANGUAGE_CODE }}/users/check_login"> {% csrf_token %}
 <div>
+	<label for="id_username">Username :</label>
+	{{ form.username }}
+</div>
+<div>
+	<label for="id_password">Password :</label>
+	{{ form.password }}
+</div>
+<div>
+	{{ form.remember }}
+	<label for="id_remember">Remember me</label>
+</div>
+<div class="submit">
+	<input type="submit" value="Log in">
 </div>
 </form>
 <div id="PasswordForgotten">

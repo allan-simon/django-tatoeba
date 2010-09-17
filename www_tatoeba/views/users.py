@@ -39,7 +39,13 @@ def register(request):
 	if request.method == 'POST':
 		form = RegisterForm(request.POST)
 		if form.is_valid():
-			return HttpResponse('Wellcome !')
+			from django.contrib.auth.models import User
+			user = User.objects.create_user(
+				form.cleaned_data['username'],
+				form.cleaned_data['email'],
+				form.cleaned_data['password']
+			)
+			return HttpResponseRedirect('/en/users/login')
 	else:
 		form = RegisterForm()
 
@@ -48,8 +54,13 @@ def register(request):
 	return HttpResponse(t.render(c))
 
 def login(request):
+	from www_tatoeba.forms import LoginForm
+	if request.method == 'POST':
+		form = LoginForm(request.POST)
+	else:
+		form = LoginForm()
 	t = loader.get_template('users/login.html')
-	c = RequestContext(request, {})
+	c = RequestContext(request, {'form': form})
 	return HttpResponse(t.render(c))
 
 def new_password(request):
