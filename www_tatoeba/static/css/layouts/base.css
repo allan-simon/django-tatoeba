@@ -344,14 +344,14 @@ dt {
 
 /* Container */
 
-#container1 {
+#page_container {
     width: 960px;
     margin: auto;
     padding: 0px 10px;
     background: url(../../img/bg_main.png) repeat-y;
 }
 
-#container {
+#content_container {
     width: 850px;
     margin-left: 100px;
     background: #FFFFFF;
@@ -432,13 +432,13 @@ dt {
 /*
  * Footer 
  */
-#footer {
+#footer_container {
     background: #e3e0d6;
     height: 18px;
     clear: both;
 }
 
-#footer_container {
+#footer {
     background: url(../../img/bg_footer.png) bottom left;
     width: 960px;
     height: 24px;
@@ -446,20 +446,20 @@ dt {
     padding: 0px 10px;
 }
 
-#footer a {
+#footer_container a {
     color: #3d3d3d;
     cursor: pointer;
     text-decoration: none;
 }
 
-#footer ul {
+#footer_container ul {
     margin: 0;
     display: block;
     float: right;
     font-size: 80%;
 }
 
-#footer li {
+#footer_container li {
     display: block;
     height: 30px;
     line-height: 30px;

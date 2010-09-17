@@ -5,26 +5,27 @@
 	<title>{% block title %}{% endblock %}</title>
 	<link rel="stylesheet" type="text/css" href="/static/css/layouts/base.css" />
 	<script type="text/javascript" src="/static/js/jquery-mini.js"></script>
+	{% block header %}{% endblock %}
 </head>
 <body>
 	{% include "layouts/top_menu.html" %}
-	<div id="container1">
+	<div id="page_container">
 		<div id="header">
 			<a href="/en"><img src="/static/img/TatoebaProjectBeta.png" width="72" height="450" alt="TatoebaProjectBeta"></a>
 		</div>
-		<div id="container">
+		<div id="content_container">
 			<div id="main_content">
 				{% block content %}{% endblock %}
 			</div>
 		</div>
-		<div id="footer">
+		<div id="footer_container">
 			<ul>
 				<li>plop</li>
 				<li>plop</li>
 			</ul>
 		</div>
 	</div>
-	<div id="footer_container">
+	<div id="footer">
 	</div>
 </body>
 </html>

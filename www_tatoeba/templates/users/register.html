@@ -1,0 +1,35 @@
+{% extends "layouts/base.html" %}
+
+{% block title  %}plop{% endblock %}
+{% block header %}
+<link rel="stylesheet" type="text/css" href="/static/css/users/register.css" />
+{% endblock %}
+
+{% block content %}
+<form id="UserRegisterForm" action="/{{ LANGUAGE_CODE }}/users/register" method="post"> {% csrf_token %}
+	<table id="userInformation">
+		<tr>
+			<td class="field"><label for="id_username">Username:</label></td>
+			<td>{{ form.username }}</td>
+		</tr>
+		<tr>
+			<td class="field"><label for="id_password">Password:</label></td>
+			<td>{{ form.password }}</td>
+		</tr>
+		<tr>
+			<td class="field"><label for="id_email">Email:</label></td>
+			<td>{{ form.email }}</td>
+		</tr>
+	</table>
+	<div id="quiz">
+		We need to make sure are human.
+		<label for="id_">What are the five first letters of your email?</label>
+		{{ form.captcha }}
+	</div>
+	<div id="termsOfUse">
+		{{ form.termsOfUse }}
+		I accept the <a href=""> terms of use</a>
+	</div>
+	<input id="registerButton" type="submit" value="Register">
+</form>
+{% endblock %}

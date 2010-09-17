@@ -1,0 +1,15 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}plop{% endblock %}
+{% block content %}
+<from id="UserLoginForm" method="post" action="/{{ LANGUAGE_CODE }}/users/check_login">
+<div>
+</div>
+</form>
+<div id="PasswordForgotten">
+	<a href="/{{ LANGUAGE_CODE }}/users/new_password">Password forgotten?</a>
+</div>
+<div id="ClickHereToRegister">
+	<a href="/{{ LANGUAGE_CODE }}/users/register" class="registerButton">Register</a>
+</div>
+{% endblock %}
