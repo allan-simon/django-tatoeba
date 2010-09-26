@@ -12,12 +12,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'pytatoeba',                      # Or path to database file if using sqlite3.
-        'USER': 'tatoebadmin',                      # Not used with sqlite3.
-        'PASSWORD': 'obito',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'mysql',
+        'NAME': 'pytatoeba',  # Or path to database file if using sqlite3.
+        'USER': 'tatoebadmin',  # Not used with sqlite3.
+        'PASSWORD': 'obito',  # Not used with sqlite3.
+        'HOST': '',  # Set to '' for localhost. Not used with sqlite3.
+        'PORT': '',  # Set to '' for default. Not used with sqlite3.
     }
 }
 
@@ -35,7 +35,7 @@ LANGUAGE_CODE = 'en'
 # Supported language for this application
 #_ = lambda s: s
 LANGUAGES = (
-	('de', u'Deutsch'),
+    ('de', u'Deutsch'),
     ('en', u'English'),
     ('fr', u'Français'),
 )
@@ -73,8 +73,8 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware', # added for internationalization
-    'middleware.I18nUrlsMiddleware.I18nUrlsMiddleware', # added
+    'django.middleware.locale.LocaleMiddleware',  # added for i18n
+    'middleware.I18nUrlsMiddleware.I18nUrlsMiddleware',  # added
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -86,10 +86,11 @@ ROOT_URLCONF = 'www_tatoeba.urls'
 APPEND_SLASH = False
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Put strings here, like "/home/html/django_templates" or
+    #"C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/Users/biptaste/Documents/tatoeba/www_tatoeba/templates',	# added
+    '/Users/biptaste/Documents/tatoeba/www_tatoeba/templates',    # added
 )
 
 INSTALLED_APPS = (
@@ -97,7 +98,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.admin',		# added
+    'django.contrib.admin',        # added
     'django.contrib.messages',
-    'www_tatoeba',				# added
+    'www_tatoeba',                # added
 )
