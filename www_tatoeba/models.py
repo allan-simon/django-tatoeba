@@ -33,7 +33,7 @@ class AuthPermission(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=150)
     content_type_id = models.IntegerField()
-    codename = models.CharField(unique=True, max_length=300)
+    codename = models.CharField(unique=True, max_length=240)
     class Meta:
         db_table = u'auth_permission'
 
@@ -81,8 +81,8 @@ class DjangoAdminLog(models.Model):
 class DjangoContentType(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=300)
-    app_label = models.CharField(unique=True, max_length=300)
-    model = models.CharField(unique=True, max_length=300)
+    app_label = models.CharField(unique=True, max_length=255)
+    model = models.CharField(unique=True, max_length=255)
     class Meta:
         db_table = u'django_content_type'
 
