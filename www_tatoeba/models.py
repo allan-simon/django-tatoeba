@@ -13,21 +13,21 @@ class AuthGroup(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(unique=True, max_length=240)
     class Meta:
-        db_table = u'auth_group'
+        db_table = u'tato_auth_group'
 
 class AuthGroupPermissions(models.Model):
     id = models.IntegerField(primary_key=True)
     group_id = models.IntegerField()
     permission_id = models.IntegerField()
     class Meta:
-        db_table = u'auth_group_permissions'
+        db_table = u'tato_auth_group_permissions'
 
 class AuthMessage(models.Model):
     id = models.IntegerField(primary_key=True)
     user_id = models.IntegerField()
     message = models.TextField()
     class Meta:
-        db_table = u'auth_message'
+        db_table = u'tato_auth_message'
 
 class AuthPermission(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -35,7 +35,7 @@ class AuthPermission(models.Model):
     content_type_id = models.IntegerField()
     codename = models.CharField(unique=True, max_length=240)
     class Meta:
-        db_table = u'auth_permission'
+        db_table = u'tato_auth_permission'
 
 class AuthUser(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -50,21 +50,21 @@ class AuthUser(models.Model):
     last_login = models.DateTimeField()
     date_joined = models.DateTimeField()
     class Meta:
-        db_table = u'auth_user'
+        db_table = u'tato_auth_user'
 
 class AuthUserGroups(models.Model):
     id = models.IntegerField(primary_key=True)
     user_id = models.IntegerField()
     group_id = models.IntegerField()
     class Meta:
-        db_table = u'auth_user_groups'
+        db_table = u'tato_auth_user_groups'
 
 class AuthUserUserPermissions(models.Model):
     id = models.IntegerField(primary_key=True)
     user_id = models.IntegerField()
     permission_id = models.IntegerField()
     class Meta:
-        db_table = u'auth_user_user_permissions'
+        db_table = u'tato_auth_user_user_permissions'
 
 class DjangoAdminLog(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -76,7 +76,7 @@ class DjangoAdminLog(models.Model):
     action_flag = models.IntegerField()
     change_message = models.TextField()
     class Meta:
-        db_table = u'django_admin_log'
+        db_table = u'tato_django_admin_log'
 
 class DjangoContentType(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -84,19 +84,19 @@ class DjangoContentType(models.Model):
     app_label = models.CharField(unique=True, max_length=255)
     model = models.CharField(unique=True, max_length=255)
     class Meta:
-        db_table = u'django_content_type'
+        db_table = u'tato_django_content_type'
 
 class DjangoSession(models.Model):
     session_key = models.CharField(max_length=120, primary_key=True)
     session_data = models.TextField()
     expire_date = models.DateTimeField()
     class Meta:
-        db_table = u'django_session'
+        db_table = u'tato_django_session'
 
 class DjangoSite(models.Model):
     id = models.IntegerField(primary_key=True)
     domain = models.CharField(max_length=300)
     name = models.CharField(max_length=150)
     class Meta:
-        db_table = u'django_site'
+        db_table = u'tato_django_site'
 
