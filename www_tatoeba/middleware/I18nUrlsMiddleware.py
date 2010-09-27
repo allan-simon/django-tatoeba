@@ -24,6 +24,10 @@ class I18nUrlsMiddleware:
 			return HttpResponseRedirect('/'+translation.get_language())
 
 
+    def process_response(self, request, response):
+        if (reponse.has_key('location')):
+            response['location'] = '/fr/' + response['location']
+        return response
 
 	def getOldLanguageCode(self):
 		lang = {
@@ -31,4 +35,4 @@ class I18nUrlsMiddleware:
 			'eng': 'en',
 			'fre': 'fr'
 		}
-		return lang 
+		return lang
