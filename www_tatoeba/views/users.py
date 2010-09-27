@@ -20,12 +20,12 @@ def check_login(request):
         msg = 'wrong'
     t = loader.get_template('pages/index.html')
     c = RequestContext(request, {})
-    return HttpResponseRedirect('/en/home')
+    return HttpResponseRedirect('/home')
 
 
 def logout(request):
     dlogout(request)
-    return HttpResponseRedirect('/en/users/login')
+    return HttpResponseRedirect('/users/login')
 
 
 def all(request):
@@ -49,7 +49,7 @@ def register(request):
                 form.cleaned_data['email'],
                 form.cleaned_data['password']
             )
-            return HttpResponseRedirect('/en/users/login')
+            return HttpResponseRedirect('/users/login')
     else:
         form = RegisterForm()
 
