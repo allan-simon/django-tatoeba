@@ -25,5 +25,5 @@ urlpatterns = patterns('',
     (r'^\w+/users/all/?$', 'views.users.all'),
     (r'^\w+/users/register/?$', 'views.users.register'),
     (r'^\w+/sentences/show/random/?$', 'views.sentences.random'),
-    (r'^\w+/sentences/show/(?P<sentence_id>\d+)/?$', 'views.sentences.show'),
+    url(r'^(\w+)/sentences/show/(?P<sentence_id>\d+)/?$', 'views.sentences.show', name="sentences-show"),
 )

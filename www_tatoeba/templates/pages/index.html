@@ -1,9 +1,10 @@
 {% extends "layouts/base.html" %}
 
+{% load tags %}
 {% block title %}My super Title{% endblock %}
 
 {% block content %}
 <div id="content">
-	My body is beautiful{% tatoeba_url %}
+	My body is beautiful{% tatoeba_url sentences-show 2 %}
 </div>
 {% endblock %}
