@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Django settings for tatoeba project.
 
 DEBUG = True
@@ -31,7 +32,13 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
+
+# Supported language for this application
+LANGUAGE = (
+    ('en', 'English'),
+    ('fr', 'Francais'),
+)
 
 SITE_ID = 1
 
@@ -70,6 +77,8 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'tatoeba.middleware.urls.I18nUrlsMiddleware', # added
+    'django.middleware.locale.LocaleMiddleware', # added
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
