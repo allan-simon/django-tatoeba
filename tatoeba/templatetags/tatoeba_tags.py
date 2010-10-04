@@ -4,6 +4,7 @@ from django.utils import translation
 
 register = template.Library()
 
+
 @register.tag(name='tatoeba_url')
 def do_tatoeba_url(parser, token):
     bits = token.split_contents()
@@ -21,10 +22,11 @@ def do_tatoeba_url(parser, token):
 
     return TatoebaUrlNode(viewname, args)
 
+
 class TatoebaUrlNode(template.Node):
     def __init__(self, viewname, args):
         self.viewname = viewname
         self.args = args
+
     def render(self, context):
         return reverse(self.viewname, args=self.args)
-
